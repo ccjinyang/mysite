@@ -5,14 +5,30 @@ h1 { padding: 2em 1em; background: #675 }
 h2 { color: #bf8; border-top: 1px dotted #fff; margin-top: 2em }
 p { margin: 1em 0 }
 </style>
+<head>
+    <link rel="stylesheet" href="style.css" />
+    <title>{% block title %}My amazing site{% endblock %}</title>
+</head>
 <body>
 <h1>Young's Blog</h1>
+<div id="sidebar">
+        {% block sidebar %}
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/myblog/">Blog</a></li>
+			<li><a href="admin/">Admin Login</a></li>
+			<li><a href="admin/myblog/blogpost/add/">Add Blog</a></li>
+        </ul>
+        {% endblock %}
+ </div>
+ <div id="content">
 {% block content %}
 {% for post in posts %}
 <h2>{{ post.title }}</h2>
 <p>{{ post.timestamp }}</p>
 <p>{{ post.blog_type }}</p>
-<p>{{ post.body }}</p>
+<p>{{ post.body|escape|linebreaks|truncatewords:30 }}</p>
+ </div>
 {% endfor %}
 {% endblock %}
 </body>
