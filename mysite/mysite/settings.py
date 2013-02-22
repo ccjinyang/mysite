@@ -107,6 +107,7 @@ TEMPLATE_DIRS = (
 	#r'C:\Users\Young\Documents\GitHub\mysite\mysite\mysite\mytemplates',
 	os.path.join(os.getcwd(),r'mytemplates'),
 	os.path.join(os.getcwd(),r'polls',r'pollstemplates'),
+	os.path.join(os.getcwd(),r'myblog',r'blogtemplates'),
 	#r'C:\Users\yajin\Documents\GitHub\mysite\mysite\polls\pollstemplates',
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
@@ -122,6 +123,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 	'django.contrib.admin',
 	'polls',
+	'myblog',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
